@@ -58,11 +58,6 @@ jobs:
       run: |
         cd ${GITHUB_WORKSPACE}
         source build/${FOLDER_NAME}/common.sh && Diy_delruns
-
-    - name: CPU检测
-      run: |
-        cd ${GITHUB_WORKSPACE}
-        source build/${FOLDER_NAME}/common.sh && CPU_Priority
         
     - name: 清理空间
       uses: jlumbroso/free-disk-space@main
