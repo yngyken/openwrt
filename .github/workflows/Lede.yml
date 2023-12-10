@@ -206,6 +206,13 @@ jobs:
       if: env.SSH_ACTION == 'true'
       uses: danshui-git/debugger-action@main
 
+    - name: 生成"${{ matrix.target }}"配置文件
+      if: env.REPO_TOKEN
+      id: compile
+      run: |
+        cd openwrt
+        source ${BUILD_PATH}/common.sh && Diy_menu6
+
     - name: 编译信息
       continue-on-error: true
       if: env.COMPILATION_INFORMATION == 'true'
